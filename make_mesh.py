@@ -7,7 +7,6 @@ def h(x):
 x = np.arange(-2,2.1,0.1)
 z_surf = h(x)
 z_bed  = x[1:-1] * 0
-print(z_surf)
 
 xpts = np.concatenate([x, np.flip(x[1:-1])])
 ypts = np.concatenate([z_surf, np.flip(z_bed)])

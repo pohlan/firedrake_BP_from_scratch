@@ -15,9 +15,9 @@ x, y = df.SpatialCoordinate(mesh)
 V = df.FunctionSpace(mesh, 'CG', 1)
 v = df.Function(V)
 f = df.Function(V).interpolate(f0 - x/2)
-tau_c = df.Function(V).interpolate(df.min_value(df.ge(abs(x),0.5), df.le(abs(x),3/2)))
+tau_c = df.Function(V).interpolate(df.min_value(df.ge(abs(x),0.5), df.le(abs(x),3/2)) * tau0)
 
-# 2D
+# 3D
 # s = df.sqrt( u.dx(0)**2 +  u.dx(0)*v.dx(1) + v.dx(1)**2 \
 #             + 0.25*(u.dx(1)+v.dx(0))**2 + 0.25*u.dx(2)**2 + 0.25*v.dx(2)**2 )
 
