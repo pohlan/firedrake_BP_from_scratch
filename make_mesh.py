@@ -24,6 +24,7 @@ plane = geometry.add_plane_surface([face])
 
 i = len(x) - 1
 physical_line = geometry.add_physical_group(1, lines[-i:]) # bed
+physical_line = geometry.add_physical_group(1, lines[0:i]) # surface
 physical_surface = geometry.add_physical_group(2, [plane])
 
 geometry.synchronize()
